@@ -3,7 +3,7 @@
 ## Development
 
 You can develop this role using Vagrant virtual machine. It can be started using Vagrant directly by running
-`vagrant up` while in `molecule/default` subdirectory. This machine will be provisioned with playbook 
+`vagrant up` while in `vagrant/` subdirectory. This machine will be provisioned with playbook 
 `molecule/default/playbook.yml`, which will run this role and all required dependencies. After that, you can connect
 to this machine with `vagrant ssh` command.
 
