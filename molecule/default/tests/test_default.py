@@ -7,8 +7,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_composer_exists(host):
-    f = host.file('/usr/local/bin/composer')
+    composer_executable = host.file('/usr/local/bin/composer')
 
-    assert f.exists
-    assert f.is_file
-    assert f.mode == 0o755
+    assert composer_executable.exists
+    assert composer_executable.is_file
+    assert composer_executable.mode == 0o755
