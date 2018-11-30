@@ -31,9 +31,9 @@ To install molecule:
    * can be installed from _HomeBrew_ on macOS by issuing `brew install python@2` command
 2. Install pip - python package manager
 
-```
-curl https://bootstrap.pypa.io/get-pip.py | sudo /usr/local/bin/python2
-```
+    ```
+    curl https://bootstrap.pypa.io/get-pip.py | sudo /usr/local/bin/python2
+    ```
 
 3. Install virtualenv package using pip
    Install location might vary. Usually pip will be installed in a location on system path, so it should be available
@@ -41,41 +41,41 @@ curl https://bootstrap.pypa.io/get-pip.py | sudo /usr/local/bin/python2
    the binary location is a bit convoluted. For instance, it might be `/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/bin/pip`.
    To make it easier to use, you can create a symbolic link in a directory on system path. For instance:
    
-```
-sudo ln -s /usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/bin/pip
-``` 
+    ```
+    sudo ln -s /usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/bin/pip
+    ``` 
 
 4. Install `virtualenv`
 
-```
-virtualenv --no-site-packages ~/.venv
-```
+    ```
+    virtualenv --no-site-packages ~/.venv
+    ```
 
 5. Activate `virtualenv` (this step will need to be executed before running molecule in a new shell)
 
-```
-source ~/.venv/bin/activate
-```
+    ```
+    source ~/.venv/bin/activate
+    ```
 
 6. Install required packages
 
-```
-pip install molecule ansible
-```
+    ```
+    pip install molecule ansible
+    ```
 
 7. [option] for running tests in docker container, install docker from [Docker website](https://www.docker.com/products/docker-desktop)
    and install docker python package
    
-```
-pip install docker-py
-```
+    ```
+    pip install docker-py
+    ```
 
 8. [option] for running tests in a vagrant environment, install [vagrant](https://www.vagrantup.com/), 
    [VirtualBox](http://virtualbox.org/), and python package for vagrant
    
-```
-pip install python-vagrant
-```
+    ```
+    pip install python-vagrant
+    ```
 
 In the instructions above location of python binary may need to be adjusted.
 
