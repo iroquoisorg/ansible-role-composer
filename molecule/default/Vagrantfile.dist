@@ -5,17 +5,15 @@ Vagrant.configure(2) do |config|
 
     config.vm.define "testmachine" do |testmachine|
         testmachine.vm.box = "bento/ubuntu-16.04"
-        testmachine.vm.network :private_network, ip: "10.0.0.100", netmask: "255.255.255.0"
-        testmachine.ssh.forward_agent = true
 
         testmachine.vm.provider :virtualbox do |v|
             v.gui = false
             v.name = "testmachine"
-            v.memory = 2048
+            v.memory = 512
         end
 
         testmachine.vm.synced_folder ".", "/vagrant", disabled: true
-        testmachine.vm.synced_folder "../../", "/vagrant/ansible-role-composer", id: "ansible", type: "nfs"
+        testmachine.vm.synced_folder "../../", "/vagrant/ansible-role-composer", id: "ansible", type: "rsync", rsync__exclude: ".git/"
 
         testmachine.vm.provision "ansible_local" do |ansible|
             ansible.galaxy_role_file = "ansible-role-composer/molecule/default/requirements.yml"
