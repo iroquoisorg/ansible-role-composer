@@ -2,5 +2,6 @@
 - name: Converge
   hosts: all
   become: true
+    composer_version: "1.8.0"
   roles:
     - role: ansible-role-composer
